@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_favourites">
+
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.currency_converter.presentation.favourites.FavouriteCurrenciesFragment"
+        tools:layout="@layout/fragment_favourite_currencies" />
+
+    <fragment
+        android:id="@+id/navigation_converter"
+        android:name="com.example.currency_converter.presentation.converter.ConverterFragment"
+        tools:layout="@layout/fragment_converter" />
+
+</navigation>

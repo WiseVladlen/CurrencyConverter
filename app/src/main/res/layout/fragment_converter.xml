@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:theme="@style/Theme.CurrencyConverter.Toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/title_converter" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/edit_text_from"
+        style="@style/Theme.CurrencyConverter.EditText.Number"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="Autofill, LabelFor" />
+
+    <EditText
+        android:id="@+id/edit_text_to"
+        style="@style/Theme.CurrencyConverter.EditText.Number"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_from"
+        tools:ignore="Autofill, LabelFor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_from"
+        style="@style/Theme.CurrencyConverter.Button"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="USD" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_to"
+        style="@style/Theme.CurrencyConverter.Button"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_from"
+        tools:text="RUB" />
+
+    <com.example.currency_converter.utils.line_chart.LineChartView
+        android:id="@+id/line_chart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barrier_to" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_chart"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_1_week"
+            style="@style/Theme.CurrencyConverter.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_1_week" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_1_month"
+            style="@style/Theme.CurrencyConverter.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_1_month" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_6_months"
+            style="@style/Theme.CurrencyConverter.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_6_months" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_1_year"
+            style="@style/Theme.CurrencyConverter.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_1_year" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_5_years"
+            style="@style/Theme.CurrencyConverter.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_5_years" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="edit_text_from,button_from" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="edit_text_to,button_to" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

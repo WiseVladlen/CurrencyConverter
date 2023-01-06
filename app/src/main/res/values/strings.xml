@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">CurrencyConverter</string>
+    <string name="app_name">Конвертер валют</string>
+
+    <string name="title_converter">Конвертер</string>
+    <string name="title_favourites">Избранное</string>
+
+    <string name="title_settings">Настройки</string>
+    <string name="title_new_currency">Новая валюта</string>
+
+    <string name="title_delete_currency">Удалить из избранных</string>
+    <string name="title_change_base_currency">Сделать базовой валютой</string>
+
+    <string name="title_base_currency">Базовая валюта&#160;&#160;&#160;•&#160;&#160;&#160;(%1$s)</string>
+
+    <string name="query_hint">Код или название валюты</string>
+
+    <string name="title_1_week">1 НЕД</string>
+    <string name="title_1_month">1 МЕС</string>
+    <string name="title_6_months">6 МЕС</string>
+    <string name="title_1_year">1 ГОД</string>
+    <string name="title_5_years">5 ЛЕТ</string>
 </resources>
